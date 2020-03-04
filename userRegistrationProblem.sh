@@ -31,7 +31,7 @@ function validEmailId()
 {
 	read -p "Enter a email id:" emailId
 	#Pattern for valid emailid 
-	patternForEmailId="^[a-zA-Z0-9]+@[a-zA-Z0-9]+\.[a-z]{2,}$"
+	patternForEmailId="^[a-z]{1,}([.]?[-]?[+]?[a-z0-9]{1,})?[@]{1}[a-z0-9]{1,}[.]{1}[a-z]{2,4}([.]?[a-z]{2,4})?$"
 	if [[ $emailId =~ $patternForEmailId ]]
 	then
 		echo Valid
