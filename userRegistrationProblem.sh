@@ -48,8 +48,22 @@ function validMobileNumber()
 	else
 		echo Invalid
 	fi
-} 
+}
+#Validate length password
+function validPassword()
+{
+	read -p "Enter a password data:" Password
+	#Pattern for valid password
+	patternPassword="^.{8,}$"
+	if [[ $Password =~ $patternPassword ]]
+	then
+		echo Valid
+	else
+		echo Invalid
+	fi
+}
 validFirstName
 validLastName
 validEmailId
 validMobileNumber
+validPassword
