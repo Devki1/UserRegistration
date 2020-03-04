@@ -83,10 +83,20 @@ function isNumber()
 	atleastOneNumber="[0-9]{1,}"
 	if [[ $password =~ $atleastOneNumber ]]
 	then
-		echo Valid
+		 isSpecialCharacter
 	else
 		echo Invalid
 	fi
 }
+function isSpecialCharacter()
+{	
+	SPECIAL='!@#$%^&*(),.?":{}|<>'
+	passwordSpecialChar="^[^$SPECIAL]*[$SPECIAL][^$SPECIAL]*$"
+	if [[ $password =~ $passwordSpecialChar ]]
+	then
+		echo Valid
+	else
+		echo Invalid
+fi
+}
 validPassword
-
