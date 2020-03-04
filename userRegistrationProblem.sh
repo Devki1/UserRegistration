@@ -1,4 +1,5 @@
 #!/bin/bash -x
+COUNTRY_CODE=91
 echo "Welcome to user registration problem"
 function validFirstName()
 {
@@ -26,7 +27,7 @@ fi
 }
 function validEmailId()
 {
-read -p "Enter a valid email id:" EmailId
+read -p "Enter a email id:" EmailId
 #Pattern for valid emailid 
 patternForEmailId="^[a-zA-Z0-9]+@[a-zA-Z0-9]+\.[a-z]{2,}$"
 if [[ $EmailId =~ $patternForEmailId ]]
@@ -36,6 +37,19 @@ else
 	echo Invalid
 fi
 }
+function validMobileNumber()
+{
+read -p "Enter a  mobile number:" MobileNumber
+#Pattern for valid mobile number
+patternForMobileNumber="^$COUNTRY_CODE[ ][9876]{1}[0-9]{9}$"
+if [[ $MobileNumber =~ $patternForMobileNumber ]]
+then
+	echo Valid
+else
+	echo Invalid
+fi
+}
 validFirstName
 validLastName
 validEmailId
+validMobileNumber
