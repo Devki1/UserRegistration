@@ -57,6 +57,16 @@ function validPassword()
 	patternPassword="^.{8,}$"
 	if [[ $Password =~ $patternPassword ]]
 	then
+		isUpperCase
+	else
+		echo Invalid
+	fi
+}
+function isUpperCase()
+{
+	oneUppercase="^[A-Z]{1,}$"
+	if [[ $password =~ $oneUpperCase ]]
+	then
 		echo Valid
 	else
 		echo Invalid
